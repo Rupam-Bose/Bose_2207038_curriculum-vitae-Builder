@@ -1,6 +1,7 @@
 module com.example.cv {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.compiler;
 
     opens com.example.cv.Controller to javafx.fxml;
 
