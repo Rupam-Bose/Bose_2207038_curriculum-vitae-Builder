@@ -31,19 +31,19 @@ public class CVcontroller {
     private void GenerateCV(ActionEvent event) throws Exception {
         String Name = name.getText();
        String Email = email.getText();
-//        String Phone = phone.getText();
-//        String Address = address.getText();
-//        String Education = education.getText();
-//        String Skills = skills.getText();
-//        String WorksExperience = worksExperience.getText();
-//        String Projects = projects.getText();
+        String Phone = phone.getText();
+        String Address = address.getText();
+        String Education = education.getText();
+        String Skills = skills.getText();
+        String WorksExperience = worksExperience.getText();
+        String Projects = projects.getText();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/CVview.fxml"));
         Parent root = loader.load();
 
         // Pass data to second controller
         CVviewController controller = loader.getController();
-        controller.setData(Name, Email);
+        controller.setData(Name,Phone,Email,Address,Education,Skills,WorksExperience,Projects);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
 
         Scene scene = new Scene(root, 800, 800);
