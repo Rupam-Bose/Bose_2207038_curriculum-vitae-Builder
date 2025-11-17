@@ -55,6 +55,30 @@
                </font>
             </Label>
             <TextField />
+            <Label text="Educational Qualifications:">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField />
+            <Label text="Skills:">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField />
+            <Label text="Works Experience:">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField />
+            <Label text="Projects :">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField />
             </children>
         </VBox>
     </children>
