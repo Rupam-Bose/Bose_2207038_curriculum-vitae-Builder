@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -16,7 +17,7 @@
                   <Font size="30.0" />
                </font>
                <VBox.margin>
-                  <Insets left="130.0" right="130.0" top="30.0" />
+                  <Insets left="150.0" right="130.0" top="30.0" />
                </VBox.margin>
             </Label>
             <Label fx:id="mail" text="Email : xyz@gmail.com">
@@ -35,6 +36,11 @@
                   <Insets left="200.0" top="5.0" />
                </VBox.margin>
             </Label>
+            <ImageView fx:id="profileImageView" fitHeight="100.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets left="275.0" top="10.0" />
+               </VBox.margin>
+            </ImageView>
             <Label fx:id="Name" text="Name : Rupam Bose">
                <font>
                   <Font size="17.0" />

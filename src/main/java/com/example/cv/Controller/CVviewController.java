@@ -2,6 +2,8 @@ package com.example.cv.Controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class CVviewController {
     @FXML
@@ -28,8 +30,10 @@ public class CVviewController {
     private Label WorksExperience;
     @FXML
     private Label Projects;
+    @FXML
+    private ImageView profileImageView;
 
-    public void setData(String name, String phone ,String email,String address,String education,String skills,String worksExperience,String projects){
+    public void setData(String name, String phone , String email, String address, String education, String skills, String worksExperience, String projects, Image image){
         CVname.setText("Curriculum Vitae of "+name);
         mail.setText("Email : "+email);
         phnnmbr.setText("Contact Number : "+phone);
@@ -41,5 +45,8 @@ public class CVviewController {
         Skills.setText("Skills : "+skills);
         WorksExperience.setText("Works Experience : "+worksExperience);
         Projects.setText("Projects : "+projects);
+        if (image != null) {
+            profileImageView.setImage(image);
+        }
     }
 }

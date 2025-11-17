@@ -127,6 +127,19 @@
                   <Insets top="5.0" />
                </VBox.margin>
             </TextField>
+            <Label text="Upload your Image :">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#uploadImage" prefHeight="19.0" prefWidth="141.0" text="Image">
+               <VBox.margin>
+                  <Insets left="10.0" top="5.0" />
+               </VBox.margin>
+            </Button>
             <Button mnemonicParsing="false" onAction="#GenerateCV" prefHeight="38.0" prefWidth="201.0" text="Generate CV">
                <font>
                   <Font size="20.0" />
