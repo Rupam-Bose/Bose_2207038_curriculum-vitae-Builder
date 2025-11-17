@@ -101,5 +101,8 @@
             </Label>
          </children>
       </VBox>
+      <AnchorPane layoutX="436.0" prefHeight="50.0" prefWidth="400.0" styleClass="falsh_screen" stylesheets="@../styles/welcome.css" AnchorPane.rightAnchor="0.0" />
+      <AnchorPane layoutX="788.0" prefHeight="886.0" prefWidth="50.0" styleClass="falsh_screen" stylesheets="@../styles/welcome.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane layoutX="400.0" layoutY="750.0" prefHeight="50.0" prefWidth="400.0" styleClass="falsh_screen" stylesheets="@../styles/welcome.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="700.0" />
    </children>
 </AnchorPane>
