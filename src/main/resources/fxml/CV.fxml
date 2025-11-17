@@ -58,7 +58,7 @@
                   <Insets top="10.0" />
                </VBox.margin>
                 </Label>
-                <TextField>
+                <TextField fx:id="phone">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin></TextField>
@@ -70,7 +70,7 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </Label>
-            <TextField>
+            <TextField fx:id="address">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
@@ -83,7 +83,7 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </Label>
-            <TextField>
+            <TextField fx:id="education">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
@@ -96,7 +96,7 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </Label>
-            <TextField>
+            <TextField fx:id="skills">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
@@ -109,7 +109,7 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </Label>
-            <TextField>
+            <TextField fx:id="worksExperience">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
@@ -122,7 +122,7 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </Label>
-            <TextField>
+            <TextField fx:id="projects">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
