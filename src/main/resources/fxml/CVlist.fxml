@@ -9,16 +9,17 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.cv.Controller.CVlistController"
-      spacing="10">
+<VBox spacing="10"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.cv.Controller.CVlistController">
+
     <padding>
-        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
     <children>
-        <Text text="Manage Saved CVs">
+        <Text text="Saved CV List">
             <font>
                 <Font size="24.0" />
             </font>
@@ -26,18 +27,18 @@
 
         <TableView fx:id="cvTable" prefHeight="600.0" prefWidth="760.0">
             <columns>
-                <TableColumn fx:id="idColumn" text="ID" prefWidth="60.0" />
-                <TableColumn fx:id="nameColumn" text="Name" prefWidth="200.0" />
-                <TableColumn fx:id="emailColumn" text="Email" prefWidth="250.0" />
-                <TableColumn fx:id="phoneColumn" text="Phone" prefWidth="200.0" />
+                <TableColumn fx:id="idColumn" prefWidth="60.0" text="ID" />
+                <TableColumn fx:id="nameColumn" prefWidth="200.0" text="Name" />
+                <TableColumn fx:id="emailColumn" prefWidth="250.0" text="Email" />
+                <TableColumn fx:id="phoneColumn" prefWidth="200.0" text="Phone" />
             </columns>
         </TableView>
 
         <HBox spacing="10">
             <children>
-                <Button text="View Selected" onAction="#onViewClicked" />
-                <Button text="Delete Selected" onAction="#onDeleteClicked" />
-                <Button text="Back" onAction="#onBackClicked" />
+                <Button onAction="#onViewClicked" text="View Selected" />
+                <Button onAction="#onDeleteClicked" text="Delete Selected" />
+                <Button onAction="#onBackClicked" text="Back to Form" />
             </children>
         </HBox>
     </children>

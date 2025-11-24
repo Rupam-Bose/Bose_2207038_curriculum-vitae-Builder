@@ -6,6 +6,7 @@ public class CVmodel {
     private String name;
     private String email;
     private String phone;
+
     private String address;
     private String education;
     private String skills;
@@ -35,7 +36,7 @@ public class CVmodel {
         this.imagePath = imagePath;
     }
 
-    // Getters / setters (needed by TableView & DAO)
+    // Getters and setters REQUIRED for TableView and DAO
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
@@ -65,12 +66,4 @@ public class CVmodel {
 
     public String getImagePath() { return imagePath; }
     public void setImagePath(String imagePath) { this.imagePath = imagePath; }
-
-    @Override
-    public String toString() {
-        return "CVmodel{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
 }
