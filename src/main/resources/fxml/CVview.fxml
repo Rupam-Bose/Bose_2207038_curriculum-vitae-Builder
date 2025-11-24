@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="800.0" prefWidth="800.0" styleClass="logo_bg" stylesheets="@../styles/welcome.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cv.Controller.CVviewController">
    <children>
       <VBox layoutX="51.0" layoutY="50.0" prefHeight="700.0" prefWidth="700.0" styleClass="falsh_screen" stylesheets="@../styles/welcome.css" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
@@ -109,6 +108,16 @@
             <Button mnemonicParsing="false" onAction="#CV" styleClass="logo_bg" stylesheets="@../styles/welcome.css" text="Create A New CV">
                <VBox.margin>
                   <Insets left="300.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#Home" styleClass="logo_bg" stylesheets="@../styles/welcome.css" text="Back to Home">
+               <VBox.margin>
+                  <Insets left="50.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#CVlist" styleClass="logo_bg" stylesheets="@../styles/welcome.css" text="Show the CV list">
+               <VBox.margin>
+                  <Insets left="550.0" top="-26.0" />
                </VBox.margin>
             </Button>
          </children>
