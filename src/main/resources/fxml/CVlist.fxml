@@ -4,44 +4,41 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.cv.Controller.CVlistController"
+      spacing="10">
+    <padding>
+        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+    </padding>
 
-<AnchorPane prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cv.Controller.CVlistController">
-   <children>
-      <VBox prefHeight="800.0" prefWidth="800.0" spacing="10.0">
-         <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-         </padding>
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Saved CV LIst">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Text>
-            <TableView prefHeight="650.0" prefWidth="760.0">
-               <columns>
-                  <TableColumn prefWidth="75.0" text="ID" />
-                  <TableColumn minWidth="220.0" prefWidth="75.0" text="Name" />
-                  <TableColumn minWidth="235.0" prefWidth="75.0" text="Email" />
-                  <TableColumn minWidth="235.0" prefWidth="75.0" text="Phone" />
-               </columns>
-            </TableView>
-            <Button mnemonicParsing="false" text="View Selected" />
-            <Button mnemonicParsing="false" text="Home">
-               <VBox.margin>
-                  <Insets left="245.0" top="-36.0" />
-               </VBox.margin>
-            </Button>
-            <Button mnemonicParsing="false" text="Delete Selected">
-               <VBox.margin>
-                  <Insets left="120.0" top="-36.0" />
-               </VBox.margin>
-            </Button>
-         </children>
-      </VBox>
-   </children>
-</AnchorPane>
+    <children>
+        <Text text="Manage Saved CVs">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Text>
+
+        <TableView fx:id="cvTable" prefHeight="600.0" prefWidth="760.0">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="60.0" />
+                <TableColumn fx:id="nameColumn" text="Name" prefWidth="200.0" />
+                <TableColumn fx:id="emailColumn" text="Email" prefWidth="250.0" />
+                <TableColumn fx:id="phoneColumn" text="Phone" prefWidth="200.0" />
+            </columns>
+        </TableView>
+
+        <HBox spacing="10">
+            <children>
+                <Button text="View Selected" onAction="#onViewClicked" />
+                <Button text="Delete Selected" onAction="#onDeleteClicked" />
+                <Button text="Back" onAction="#onBackClicked" />
+            </children>
+        </HBox>
+    </children>
+</VBox>

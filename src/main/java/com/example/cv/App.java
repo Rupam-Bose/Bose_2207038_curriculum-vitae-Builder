@@ -1,5 +1,6 @@
 package com.example.cv;
 
+import com.example.cv.DB.DatabaseInitializer;
 import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
 import javafx.application.Application;
@@ -14,7 +15,7 @@ import java.io.IOException;
 public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-
+        DatabaseInitializer.initialize();
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/splash.fxml"));
         Scene scene = new Scene(root, 800, 800);
 

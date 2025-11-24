@@ -1,0 +1,106 @@
+package com.example.cv.Controller;
+
+import com.example.cv.dao.CVDao;
+import com.example.cv.model.CVmodel;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+
+import java.io.File;
+import java.io.IOException;
+
+public class CVformController {
+
+    @FXML private TextField nameField;
+    @FXML private TextField emailField;
+    @FXML private TextField phoneField;
+    @FXML private TextArea addressArea;
+    @FXML private TextArea educationArea;
+    @FXML private TextArea skillsArea;
+    @FXML private TextArea workExpArea;
+    @FXML private TextArea projectsArea;
+
+    private String imagePath; // store file path
+
+    private final CVDao cvDao = new CVDao();
+
+    @FXML
+    private void onChooseImageClicked(ActionEvent event) {
+        FileChooser chooser = new FileChooser();
+        chooser.setTitle("Choose Profile Image");
+        File file = chooser.showOpenDialog(getStage());
+        if (file != null) {
+            imagePath = file.getAbsolutePath();
+        }
+    }
+
+    @FXML
+    private void onSaveClicked(ActionEvent event) {
+        if (nameField.getText().isBlank()) {
+            showAlert("Validation", "Name is required.");
+            return;
+        }
+
+        CVmodel cv = new CVmodel(
+                0, // id (DB auto-generates)
+                nameField.getText(),
+                emailField.getText(),
+                phoneField.getText(),
+                addressArea.getText(),
+                educationArea.getText(),
+                skillsArea.getText(),
+                workExpArea.getText(),
+                projectsArea.getText(),
+                imagePath
+        );
+
+        cvDao.insert(cv);
+        showAlert("Success", "CV saved.");
+
+        clearForm();
+    }
+
+    @FXML
+    private void onViewListClicked(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/CVlist.fxml"));
+            Stage stage = getStage();
+            stage.setScene(new Scene(root, 800, 800));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Error", "Unable to open list view.");
+        }
+    }
+
+    private Stage getStage() {
+        return (Stage) nameField.getScene().getWindow();
+    }
+
+    private void clearForm() {
+        nameField.clear();
+        emailField.clear();
+        phoneField.clear();
+        addressArea.clear();
+        educationArea.clear();
+        skillsArea.clear();
+        workExpArea.clear();
+        projectsArea.clear();
+        imagePath = null;
+    }
+
+    private void showAlert(String title, String msg) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(msg);
+        alert.showAndWait();
+    }
+}
