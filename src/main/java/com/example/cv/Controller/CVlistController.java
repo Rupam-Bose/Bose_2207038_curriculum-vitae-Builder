@@ -27,7 +27,7 @@ public class CVlistController {
     private TableView<CVmodel> cvTable;
 
     @FXML
-    private TableColumn<CVmodel, Integer> idColumn;
+    private TableColumn<CVmodel, Number> idColumn;
 
     @FXML
     private TableColumn<CVmodel, String> nameColumn;
@@ -43,16 +43,13 @@ public class CVlistController {
 
     @FXML
     public void initialize() {
-        System.out.println("CVlistController.initialize, cvTable = " + cvTable);
-
-        // column -> CVmodel getter name
+        // bind columns to properties
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
         phoneColumn.setCellValueFactory(new PropertyValueFactory<>("phone"));
 
-        // enable row selection
-        cvTable.getSelectionModel().setCellSelectionEnabled(false);
+       // cvTable.getSelectionModel().setCellSelectionEnabled(false);
         cvTable.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 
         loadData();
@@ -60,7 +57,6 @@ public class CVlistController {
 
     private void loadData() {
         List<CVmodel> all = cvDao.findAll();
-        System.out.println("Found CV count = " + (all == null ? "null" : all.size()));
         cvList = FXCollections.observableArrayList(all != null ? all : List.of());
         cvTable.setItems(cvList);
     }
@@ -68,7 +64,6 @@ public class CVlistController {
     @FXML
     private void onViewClicked(ActionEvent event) {
         CVmodel selected = cvTable.getSelectionModel().getSelectedItem();
-        System.out.println("Selected item in view: " + selected);
 
         if (selected == null) {
             showAlert("No CV selected", "Please select a CV to view.");
@@ -114,7 +109,6 @@ public class CVlistController {
     @FXML
     private void onDeleteClicked(ActionEvent event) {
         CVmodel selected = cvTable.getSelectionModel().getSelectedItem();
-        System.out.println("Selected item in delete: " + selected);
 
         if (selected == null) {
             showAlert("No CV selected", "Please select a CV to delete.");
@@ -128,7 +122,7 @@ public class CVlistController {
     @FXML
     private void onBackClicked(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/CVform.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/CV.fxml"));
             Stage stage = (Stage) cvTable.getScene().getWindow();
             stage.setScene(new Scene(root, 800, 800));
             stage.show();

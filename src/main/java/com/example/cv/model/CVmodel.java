@@ -1,18 +1,25 @@
 package com.example.cv.model;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class CVmodel {
 
-    private int id;
-    private String name;
-    private String email;
-    private String phone;
+    private final IntegerProperty id = new SimpleIntegerProperty();
+    private final StringProperty name = new SimpleStringProperty();
+    private final StringProperty email = new SimpleStringProperty();
+    private final StringProperty phone = new SimpleStringProperty();
+    private final StringProperty address = new SimpleStringProperty();
+    private final StringProperty education = new SimpleStringProperty();
+    private final StringProperty skills = new SimpleStringProperty();
+    private final StringProperty workExperience = new SimpleStringProperty();
+    private final StringProperty projects = new SimpleStringProperty();
+    private final StringProperty imagePath = new SimpleStringProperty();
 
-    private String address;
-    private String education;
-    private String skills;
-    private String workExperience;
-    private String projects;
-    private String imagePath;
+    public CVmodel() {
+    }
 
     public CVmodel(int id,
                    String name,
@@ -24,46 +31,135 @@ public class CVmodel {
                    String workExperience,
                    String projects,
                    String imagePath) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
-        this.address = address;
-        this.education = education;
-        this.skills = skills;
-        this.workExperience = workExperience;
-        this.projects = projects;
-        this.imagePath = imagePath;
+        setId(id);
+        setName(name);
+        setEmail(email);
+        setPhone(phone);
+        setAddress(address);
+        setEducation(education);
+        setSkills(skills);
+        setWorkExperience(workExperience);
+        setProjects(projects);
+        setImagePath(imagePath);
     }
 
-    // Getters and setters REQUIRED for TableView and DAO
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public int getId() {
+        return id.get();
+    }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public void setId(int value) {
+        id.set(value);
+    }
 
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
+    public IntegerProperty idProperty() {
+        return id;
+    }
 
-    public String getPhone() { return phone; }
-    public void setPhone(String phone) { this.phone = phone; }
+    public String getName() {
+        return name.get();
+    }
 
-    public String getAddress() { return address; }
-    public void setAddress(String address) { this.address = address; }
+    public void setName(String value) {
+        name.set(value);
+    }
 
-    public String getEducation() { return education; }
-    public void setEducation(String education) { this.education = education; }
+    public StringProperty nameProperty() {
+        return name;
+    }
 
-    public String getSkills() { return skills; }
-    public void setSkills(String skills) { this.skills = skills; }
+    public String getEmail() {
+        return email.get();
+    }
 
-    public String getWorkExperience() { return workExperience; }
-    public void setWorkExperience(String workExperience) { this.workExperience = workExperience; }
+    public void setEmail(String value) {
+        email.set(value);
+    }
 
-    public String getProjects() { return projects; }
-    public void setProjects(String projects) { this.projects = projects; }
+    public StringProperty emailProperty() {
+        return email;
+    }
 
-    public String getImagePath() { return imagePath; }
-    public void setImagePath(String imagePath) { this.imagePath = imagePath; }
+    public String getPhone() {
+        return phone.get();
+    }
+
+    public void setPhone(String value) {
+        phone.set(value);
+    }
+
+    public StringProperty phoneProperty() {
+        return phone;
+    }
+
+    public String getAddress() {
+        return address.get();
+    }
+
+    public void setAddress(String value) {
+        address.set(value);
+    }
+
+    public StringProperty addressProperty() {
+        return address;
+    }
+
+    public String getEducation() {
+        return education.get();
+    }
+
+    public void setEducation(String value) {
+        education.set(value);
+    }
+
+    public StringProperty educationProperty() {
+        return education;
+    }
+
+    public String getSkills() {
+        return skills.get();
+    }
+
+    public void setSkills(String value) {
+        skills.set(value);
+    }
+
+    public StringProperty skillsProperty() {
+        return skills;
+    }
+
+    public String getWorkExperience() {
+        return workExperience.get();
+    }
+
+    public void setWorkExperience(String value) {
+        workExperience.set(value);
+    }
+
+    public StringProperty workExperienceProperty() {
+        return workExperience;
+    }
+
+    public String getProjects() {
+        return projects.get();
+    }
+
+    public void setProjects(String value) {
+        projects.set(value);
+    }
+
+    public StringProperty projectsProperty() {
+        return projects;
+    }
+
+    public String getImagePath() {
+        return imagePath.get();
+    }
+
+    public void setImagePath(String value) {
+        imagePath.set(value);
+    }
+
+    public StringProperty imagePathProperty() {
+        return imagePath;
+    }
 }

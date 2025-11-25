@@ -6,6 +6,7 @@ module com.example.cv {
     requires javafx.graphics;
     requires java.sql;
     //requires com.example.cv;
+    //requires com.example.cv;
 
     opens com.example.cv.Controller to javafx.fxml;
 
